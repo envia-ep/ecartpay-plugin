@@ -1,0 +1,23 @@
+---
+description: Ecart Pay auth token flow and security requirements for integrations
+alwaysApply: true
+---
+
+# Auth and security
+
+## Authorization
+
+1. Obtain Public and Private API keys from the Ecart Pay dashboard (Integrations → API). Enable Sandbox for test keys.
+2. Create a token with `POST /api/authorizations/token` using:
+   - Header: `Authorization: Basic base64(publicKey:privateKey)`
+3. Use the returned JWT as `Authorization: <token>` on subsequent API calls.
+4. Tokens expire after **1 hour**. Refresh before expiry; do not assume long-lived sessions.
+5. Docs: https://docs.ecartpay.com/docs/authorization-token
+
+## Secrets and PCI
+
+- Never commit API keys, JWTs, webhook secrets, or card data to source control.
+- Store secrets in environment variables or a secrets manager.
+- Do not log full PANs, CVCs, or raw auth headers.
+- Prefer tokenization / SDK flows for card capture; keep sensitive card data off your application logs.
+- For webhooks, verify `x-pay-signature` (HMAC-SHA256) before processing. Docs: https://docs.ecartpay.com/docs/webhook-authentication

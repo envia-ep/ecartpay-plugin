@@ -1,0 +1,35 @@
+{
+  "name": "ecartpay",
+  "displayName": "Ecart Pay",
+  "version": "1.0.0",
+  "description": "Cursor plugin for Ecart Pay integrations — auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
+  "author": {
+    "name": "Ecart Pay",
+    "email": "developers@ecartpay.com"
+  },
+  "homepage": "https://docs.ecartpay.com",
+  "repository": "https://github.com/envia-ep/ecartpay-plugin",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": [
+    "ecartpay",
+    "payments",
+    "checkout",
+    "webhooks",
+    "mcp",
+    "fintech",
+    "cursor"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "payments",
+    "api",
+    "webhooks",
+    "sdk",
+    "mexico"
+  ],
+  "skills": "./skills/",
+  "rules": "./rules/",
+  "commands": "./commands/",
+  "mcpServers": "mcp.json"
+}

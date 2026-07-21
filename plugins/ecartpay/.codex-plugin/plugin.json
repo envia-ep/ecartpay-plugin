@@ -1,0 +1,30 @@
+{
+  "name": "ecartpay",
+  "version": "1.0.0",
+  "description": "ChatGPT Work / Codex plugin for Ecart Pay integrations — auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
+  "author": {
+    "name": "Ecart Pay",
+    "email": "developers@ecartpay.com"
+  },
+  "homepage": "https://docs.ecartpay.com",
+  "repository": "https://github.com/envia-ep/ecartpay-plugin",
+  "license": "MIT",
+  "keywords": [
+    "ecartpay",
+    "payments",
+    "checkout",
+    "webhooks",
+    "mcp",
+    "fintech",
+    "codex",
+    "chatgpt"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Ecart Pay",
+    "shortDescription": "Build Ecart Pay payment integrations with official docs and MCP.",
+    "brandColor": "#68AE34",
+    "logo": "./assets/logo.svg"
+  }
+}

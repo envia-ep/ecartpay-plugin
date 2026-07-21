@@ -5,14 +5,15 @@
     "email": "developers@ecartpay.com"
   },
   "metadata": {
-    "description": "Official Ecart Pay plugins for Cursor — payments, checkouts, webhooks, SDK, and MCP",
+    "description": "Official Ecart Pay plugins for Claude Code — payments, checkouts, webhooks, SDK, and MCP",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "ecartpay",
       "source": "./plugins/ecartpay",
-      "description": "Integrate Ecart Pay with Cursor agents using official docs and MCP"
+      "description": "Integrate Ecart Pay with Claude Code using official docs and MCP",
+      "category": "developer-tools"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "name": "ecartpay",
+  "interface": {
+    "displayName": "Ecart Pay"
+  },
+  "plugins": [
+    {
+      "name": "ecartpay",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ecartpay"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools",
+      "description": "Integrate Ecart Pay with ChatGPT Work mode and Codex using official docs and MCP"
+    }
+  ]
+}

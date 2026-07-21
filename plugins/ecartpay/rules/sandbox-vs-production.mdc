@@ -1,0 +1,20 @@
+---
+description: Keep sandbox and production Ecart Pay environments strictly separated
+alwaysApply: true
+---
+
+# Sandbox vs production
+
+| | Sandbox | Production |
+|---|---|---|
+| Base URL | `https://sandbox.ecartpay.com` | `https://ecartpay.com` |
+| Keys | Sandbox API keys (dashboard Sandbox toggle on) | Production API keys |
+| Cards / transfers | Test data from docs only | Real customer payment methods |
+
+Rules:
+
+1. Default all new integration work to **sandbox**.
+2. Never mix sandbox keys with production hosts (or the reverse).
+3. Use official test cards/transfers from https://docs.ecartpay.com/docs/test-cards-1 and related sandbox guides.
+4. Warn the user explicitly before generating or running code against production.
+5. Treat production keys and live webhook secrets as high-risk credentials.

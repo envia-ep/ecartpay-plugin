@@ -1,0 +1,15 @@
+---
+description: Always use official Ecart Pay docs and MCP before inventing API shapes
+alwaysApply: true
+---
+
+# Ecart Pay documentation first
+
+When building or debugging an Ecart Pay integration:
+
+1. Start from the agent index: https://docs.ecartpay.com/llms.txt
+2. Open the matching guide or API reference page before writing code.
+3. Prefer the `ecartpay` MCP server (`https://ecartpay.readme.io/mcp`) for docs search when available.
+4. Never invent endpoints, request fields, response shapes, webhook event names, or status values.
+5. Prefer sandbox hosts and keys while implementing: `https://sandbox.ecartpay.com`.
+6. Cite the docs URL you used when explaining an API decision.
