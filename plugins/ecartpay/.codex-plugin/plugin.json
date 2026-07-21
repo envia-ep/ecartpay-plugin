@@ -25,6 +25,6 @@
     "displayName": "Ecart Pay",
     "shortDescription": "Build Ecart Pay payment integrations with official docs and MCP.",
     "brandColor": "#75C33D",
-    "logo": "./assets/logo.png"
+    "logo": "https://raw.githubusercontent.com/envia-ep/ecartpay-plugin/main/plugins/ecartpay/assets/logo.png"
   }
 }

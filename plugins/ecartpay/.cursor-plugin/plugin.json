@@ -10,7 +10,7 @@
   "homepage": "https://docs.ecartpay.com",
   "repository": "https://github.com/envia-ep/ecartpay-plugin",
   "license": "MIT",
-  "logo": "assets/logo.png",
+  "logo": "https://raw.githubusercontent.com/envia-ep/ecartpay-plugin/main/plugins/ecartpay/assets/logo.png",
   "keywords": [
     "ecartpay",
     "payments",
