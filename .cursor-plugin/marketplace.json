@@ -6,13 +6,14 @@
   },
   "metadata": {
     "description": "Official Ecart Pay plugins for Cursor — payments, checkouts, webhooks, SDK, and MCP",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "plugins": [
     {
       "name": "ecart-pay",
       "source": "./plugins/ecart-pay",
-      "description": "Integrate Ecart Pay with Cursor agents using official docs and MCP"
+      "description": "Integrate Ecart Pay with Cursor agents using official docs and MCP",
+      "logo": "assets/logo.svg"
     }
   ]
 }

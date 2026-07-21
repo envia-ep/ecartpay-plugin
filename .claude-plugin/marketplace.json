@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Official Ecart Pay plugins for Claude Code — payments, checkouts, webhooks, SDK, and MCP",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "plugins": [
     {

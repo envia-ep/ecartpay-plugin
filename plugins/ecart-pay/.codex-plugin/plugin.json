@@ -1,6 +1,6 @@
 {
   "name": "ecart-pay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ChatGPT Work / Codex plugin for Ecart Pay integrations — auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
   "author": {
     "name": "Ecart Pay",
@@ -26,6 +26,6 @@
     "displayName": "Ecart Pay",
     "shortDescription": "Build Ecart Pay payment integrations with official docs and MCP.",
     "brandColor": "#75C33D",
-    "logo": "https://raw.githubusercontent.com/envia-ep/ecartpay-plugin/main/plugins/ecart-pay/assets/logo.png"
+    "logo": "./assets/logo.svg"
   }
 }
