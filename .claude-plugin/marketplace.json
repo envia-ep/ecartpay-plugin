@@ -6,12 +6,12 @@
   },
   "metadata": {
     "description": "Official Ecart Pay plugins for Claude Code — payments, checkouts, webhooks, SDK, and MCP",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
-      "name": "ecartpay",
-      "source": "./plugins/ecartpay",
+      "name": "ecart-pay",
+      "source": "./plugins/ecart-pay",
       "description": "Integrate Ecart Pay with Claude Code using official docs and MCP",
       "category": "developer-tools"
     }

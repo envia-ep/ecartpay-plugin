@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "ecartpay",
+      "name": "ecart-pay",
       "source": {
         "source": "local",
-        "path": "./plugins/ecartpay"
+        "path": "./plugins/ecart-pay"
       },
       "policy": {
         "installation": "AVAILABLE",

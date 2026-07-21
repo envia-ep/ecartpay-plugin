@@ -2,14 +2,14 @@
 
 Repo: https://github.com/envia-ep/ecartpay-plugin
 
-Local install (`~/.cursor/plugins/local/ecartpay`) only works on your machine. Others install via Public Marketplace or Team Marketplace below.
+Local install (`~/.cursor/plugins/local/ecart-pay`) only works on your machine. Others install via Public Marketplace or Team Marketplace below.
 
 ## Checklist
 
 - [x] `.cursor-plugin/marketplace.json` valid
-- [x] `plugins/ecartpay/.cursor-plugin/plugin.json` valid (kebab-case `ecartpay`)
+- [x] `plugins/ecart-pay/.cursor-plugin/plugin.json` valid (kebab-case `ecart-pay`)
 - [x] Rules / skills / commands have required frontmatter
-- [x] Square Ecart Pay “e” logo at `plugins/ecartpay/assets/logo.png` (+ `logo.svg`)
+- [x] Square Ecart Pay “e” logo at `plugins/ecart-pay/assets/logo.png` (+ `logo.svg`)
 - [x] `node scripts/validate-template.mjs` passes
 - [ ] Submit for Public Cursor Marketplace review (below)
 - [ ] Optional: import into Tendencys Team Marketplace (below)
@@ -20,7 +20,7 @@ Local install (`~/.cursor/plugins/local/ecartpay`) only works on your machine. O
 2. Submit:
    - Repo: `https://github.com/envia-ep/ecartpay-plugin`
    - Marketplace name: `ecartpay`
-   - Plugin name: `ecartpay`
+   - Plugin name: `ecart-pay`
 3. Cursor manually reviews (repo is public MIT — required).
 4. After listing, users install via **Browse Marketplace** → search “Ecart Pay”.
 
@@ -46,7 +46,7 @@ If you have admin access on the Tendencys Cursor team:
 1. Open Cursor **Dashboard → Plugins**.
 2. Under **Team Marketplaces**, click **Add Marketplace** → **Import from Repo**.
 3. Import `envia-ep/ecartpay-plugin` (or the full GitHub URL).
-4. Add / review the `ecartpay` plugin; set Marketplace Access and install mode (Default Off / Default On / Required).
+4. Add / review the `ecart-pay` plugin; set Marketplace Access and install mode (Default Off / Default On / Required).
 5. Optionally enable Auto Refresh (requires Cursor GitHub App on the repo).
 6. Teammates find it under **Customize** without waiting for public review.
 
@@ -58,7 +58,7 @@ Self-serve git marketplace:
 
 ```shell
 /plugin marketplace add envia-ep/ecartpay-plugin
-/plugin install ecartpay@ecartpay
+/plugin install ecart-pay@ecartpay
 ```
 
 ## ChatGPT Work / Codex

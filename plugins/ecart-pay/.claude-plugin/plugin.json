@@ -1,6 +1,6 @@
 {
-  "name": "ecartpay",
-  "version": "1.0.0",
+  "name": "ecart-pay",
+  "version": "1.0.1",
   "description": "Claude Code plugin for Ecart Pay integrations — auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
   "author": {
     "name": "Ecart Pay",
@@ -10,6 +10,7 @@
   "repository": "https://github.com/envia-ep/ecartpay-plugin",
   "license": "MIT",
   "keywords": [
+    "ecart-pay",
     "ecartpay",
     "payments",
     "checkout",

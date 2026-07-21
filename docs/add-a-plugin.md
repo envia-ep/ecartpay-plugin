@@ -1,6 +1,6 @@
 # Add a plugin
 
-This repository ships one plugin today: `plugins/ecartpay`.
+This repository ships one plugin today: `plugins/ecart-pay`.
 
 To add another pack (for example POS or subscriptions-focused):
 

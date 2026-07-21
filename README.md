@@ -17,7 +17,7 @@ One shared plugin body (`skills`, MCP, commands) with host-specific manifests �
 ### Cursor
 
 1. Install from the Cursor Marketplace when published, **or** add this repo as a plugin marketplace source.
-2. Enable the `ecartpay` plugin and the `ecartpay` MCP server.
+2. Enable the `ecart-pay` plugin and the `ecartpay` MCP server.
 3. Validate locally from a clone:
 
 ```bash
@@ -30,7 +30,7 @@ Submit / request listing: Cursor team Slack or `kniparko@anysphere.com` with thi
 
 ```shell
 /plugin marketplace add envia-ep/ecartpay-plugin
-/plugin install ecartpay@ecartpay
+/plugin install ecart-pay@ecartpay
 /reload-plugins
 ```
 
@@ -38,7 +38,7 @@ Validate:
 
 ```bash
 claude plugin validate .
-claude plugin validate ./plugins/ecartpay
+claude plugin validate ./plugins/ecart-pay
 ```
 
 ### ChatGPT Work mode / Codex
@@ -59,7 +59,7 @@ Repo marketplace catalog: [`.agents/plugins/marketplace.json`](.agents/plugins/m
 .cursor-plugin/marketplace.json      # Cursor catalog
 .claude-plugin/marketplace.json      # Claude Code catalog
 .agents/plugins/marketplace.json     # ChatGPT / Codex catalog
-plugins/ecartpay/
+plugins/ecart-pay/
   .cursor-plugin/plugin.json
   .claude-plugin/plugin.json
   .codex-plugin/plugin.json
@@ -86,4 +86,4 @@ plugins/ecartpay/
 
 ## License
 
-MIT — see [plugins/ecartpay/LICENSE](plugins/ecartpay/LICENSE).
+MIT — see [plugins/ecart-pay/LICENSE](plugins/ecart-pay/LICENSE).
