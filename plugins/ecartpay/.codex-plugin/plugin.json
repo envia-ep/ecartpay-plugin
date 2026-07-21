@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "Ecart Pay",
     "shortDescription": "Build Ecart Pay payment integrations with official docs and MCP.",
-    "brandColor": "#68AE34",
-    "logo": "./assets/logo.svg"
+    "brandColor": "#75C33D",
+    "logo": "./assets/logo.png"
   }
 }
