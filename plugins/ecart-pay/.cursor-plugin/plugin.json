@@ -1,8 +1,8 @@
 {
   "name": "ecart-pay",
   "displayName": "Ecart Pay",
-  "version": "1.0.2",
-  "description": "Cursor plugin for Ecart Pay integrations — auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
+  "version": "1.1.0",
+  "description": "Cursor plugin for Ecart Pay integrations — OAuth connect, sandbox live MCP, auth, orders, checkouts, webhooks, SDK, and Mexico pay-ins.",
   "author": {
     "name": "Ecart Pay",
     "email": "developers@ecartpay.com"
@@ -18,8 +18,10 @@
     "checkout",
     "webhooks",
     "mcp",
+    "oauth",
     "fintech",
-    "cursor"
+    "cursor",
+    "mexico"
   ],
   "category": "developer-tools",
   "tags": [
@@ -27,8 +29,30 @@
     "api",
     "webhooks",
     "sdk",
-    "mexico"
+    "mexico",
+    "oauth"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "ECARTPAY_PUBLIC_KEY": {
+        "type": "string",
+        "title": "Sandbox public key",
+        "description": "Fallback sandbox public API key when OAuth merchant keys are not available. Prefer OAuth connect for partner integrations."
+      },
+      "ECARTPAY_PRIVATE_KEY": {
+        "type": "string",
+        "title": "Sandbox private key",
+        "description": "Fallback sandbox private API key. Never commit. Prefer OAuth connect."
+      },
+      "ECARTPAY_BASE_URL": {
+        "type": "string",
+        "title": "API base URL",
+        "description": "API host for MCP execute-request. Default sandbox.",
+        "default": "https://sandbox.ecartpay.com"
+      }
+    }
+  },
   "skills": "./skills/",
   "rules": "./rules/",
   "commands": "./commands/",

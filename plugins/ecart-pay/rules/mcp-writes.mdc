@@ -1,0 +1,13 @@
+---
+description: Sandbox-only MCP API writes and OAuth-preferred credentials for Ecart Pay
+alwaysApply: true
+---
+
+# MCP writes and credentials
+
+1. Prefer **OAuth connect** (merchant keys from Authorization Code) over pasting keys into chat.
+2. Plugin Configure variables `ECARTPAY_PUBLIC_KEY` / `ECARTPAY_PRIVATE_KEY` / `ECARTPAY_BASE_URL` are a **fallback** for local sandbox only.
+3. Default MCP `execute-request` traffic to `https://sandbox.ecartpay.com`.
+4. Before any MCP write to a non-sandbox Ecart Pay host, get explicit user confirmation.
+5. Never put `client_secret`, `private_id`, or JWTs in committed code or casual logs.
+6. Discover request shapes with MCP `get-endpoint` / docs — do not invent fields.

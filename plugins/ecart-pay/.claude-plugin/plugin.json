@@ -1,7 +1,7 @@
 {
   "name": "ecart-pay",
-  "version": "1.0.2",
-  "description": "Claude Code plugin for Ecart Pay integrations — auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
+  "version": "1.1.0",
+  "description": "Claude Code plugin for Ecart Pay integrations \u2014 auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
   "author": {
     "name": "Ecart Pay",
     "email": "developers@ecartpay.com"

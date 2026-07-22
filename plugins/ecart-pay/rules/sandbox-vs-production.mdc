@@ -18,3 +18,5 @@ Rules:
 3. Use official test cards/transfers from https://docs.ecartpay.com/docs/test-cards-1 and related sandbox guides.
 4. Warn the user explicitly before generating or running code against production.
 5. Treat production keys and live webhook secrets as high-risk credentials.
+6. MCP `execute-request` and plugin Configure keys default to sandbox; confirm before any write to `https://ecartpay.com`.
+7. Prefer OAuth merchant credentials over pasting production keys into the IDE.

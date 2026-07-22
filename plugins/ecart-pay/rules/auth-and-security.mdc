@@ -7,12 +7,13 @@ alwaysApply: true
 
 ## Authorization
 
-1. Obtain Public and Private API keys from the Ecart Pay dashboard (Integrations → API). Enable Sandbox for test keys.
-2. Create a token with `POST /api/authorizations/token` using:
+1. Prefer **OAuth** for platforms connecting merchants (https://docs.ecartpay.com/docs/oauth-ecart-pay) — exchange returns merchant `public_id` / `private_id`.
+2. Otherwise obtain Public and Private API keys from the dashboard (Integrations → API) or plugin Configure fallback variables. Enable Sandbox for test keys.
+3. Create a token with `POST /api/authorizations/token` using:
    - Header: `Authorization: Basic base64(publicKey:privateKey)`
-3. Use the returned JWT as `Authorization: <token>` on subsequent API calls.
-4. Tokens expire after **1 hour**. Refresh before expiry; do not assume long-lived sessions.
-5. Docs: https://docs.ecartpay.com/docs/authorization-token
+4. Use the returned JWT as `Authorization: <token>` on subsequent API calls.
+5. Tokens expire after **1 hour**. Refresh before expiry; do not assume long-lived sessions.
+6. Docs: https://docs.ecartpay.com/docs/authorization-token
 
 ## Secrets and PCI
 

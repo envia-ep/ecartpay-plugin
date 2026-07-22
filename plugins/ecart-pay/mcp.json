@@ -2,6 +2,9 @@
   "mcpServers": {
     "ecartpay": {
       "url": "https://ecartpay.readme.io/mcp"
+    },
+    "ecartpay-api": {
+      "url": "https://mcp.ecartpay.com/mcp"
     }
   }
 }

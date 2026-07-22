@@ -5,8 +5,8 @@
     "email": "developers@ecartpay.com"
   },
   "metadata": {
-    "description": "Official Ecart Pay plugins for Claude Code — payments, checkouts, webhooks, SDK, and MCP",
-    "version": "1.0.2"
+    "description": "Official Ecart Pay plugins for Claude Code \u2014 payments, checkouts, webhooks, SDK, and MCP",
+    "version": "1.1.0"
   },
   "plugins": [
     {
