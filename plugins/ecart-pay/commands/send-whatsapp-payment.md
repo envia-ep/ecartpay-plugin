@@ -9,7 +9,7 @@ Hero action: charge a customer in WhatsApp via `POST /api/whatsapp/flows/send`.
 
 ## Host and auth
 
-Prefer authenticated `ecartpay-api`. If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
+Prefer authenticated `ecartpay-api` (`whatsapp_status`, `send_whatsapp_payment`). If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
 
 ## Steps
 

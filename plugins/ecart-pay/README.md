@@ -12,8 +12,8 @@ Helps Cursor, Claude Code, and ChatGPT Work / Codex agents build payment flows u
 | Component | Purpose |
 |---|---|
 | Rules (Cursor) | Docs-first, auth/security, sandbox vs production |
-| Skills | `integrate-payments`, `webhooks`, `sdk-checkout`, `oauth-connect`, `sandbox-live`, `choose-integration`, `msi-installments`, `bank-transfer-clabe`, `mexican-billing` |
-| Commands | Live MCP actions: `/setup-auth`, `/connect-oauth`, `/create-order`, `/create-payment-link`, `/create-checkout`, `/whatsapp-status`, `/send-whatsapp-payment`, `/get-order`, `/refund-order` |
+| Skills | `integrate-payments`, `subscriptions`, `webhooks`, `sdk-checkout`, `oauth-connect`, `sandbox-live`, `choose-integration`, `msi-installments`, `bank-transfer-clabe`, `mexican-billing` |
+| Commands | Live jobs: `/setup-auth`, `/connect-oauth`, `/create-order`, `/create-subscription`, `/create-payment-link`, `/create-checkout`, `/whatsapp-status`, `/send-whatsapp-payment`, `/get-order`, `/refund-order` |
 | MCP | `ecartpay` ReadMe docs MCP; `ecartpay-api` first-party HTTP MCP with Authenticate |
 
 ## Install

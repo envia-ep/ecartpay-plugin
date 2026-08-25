@@ -1,7 +1,7 @@
 {
   "name": "ecart-pay",
-  "version": "1.3.0",
-  "description": "ChatGPT Work / Codex plugin for Ecart Pay integrations \u2014 auth, orders, checkouts, payment links, webhooks, SDK, and the official docs MCP.",
+  "version": "1.3.2",
+  "description": "ChatGPT Work / Codex plugin for Ecart Pay integrations \u2014 auth, orders, subscriptions, checkouts, payment links, webhooks, SDK, and official MCP.",
   "author": {
     "name": "Ecart Pay",
     "email": "developers@ecartpay.com"

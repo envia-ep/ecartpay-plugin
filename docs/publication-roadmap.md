@@ -4,7 +4,7 @@ What is left to ship the Ecart Pay plugin for Cursor, Claude Code, and ChatGPT W
 
 Repo: https://github.com/envia-ep/ecartpay-plugin (already **public**).
 
-The plugin body is largely done. `node scripts/validate-template.mjs` passes. Live API calls use the ReadMe MCP (`ecartpay`). Remaining work is repo polish, Team Marketplace QA, and public listings.
+The plugin body is largely done. `node scripts/validate-template.mjs` passes. Live API calls prefer `ecartpay-api` when Authenticate succeeds; docs MCP `ecartpay` remains the fallback. Remaining work is repo polish, Team Marketplace QA, and public listings.
 
 Related: [marketplace-submission.md](./marketplace-submission.md) (how to submit).
 
@@ -13,7 +13,7 @@ Related: [marketplace-submission.md](./marketplace-submission.md) (how to submit
 | Area | Status |
 |---|---|
 | Public GitHub repo | Done |
-| Cursor / Claude / Codex manifests (`1.3.0`) | Done |
+| Cursor / Claude / Codex manifests (`1.3.2`) | Done |
 | Skills, commands, rules, logos | Done |
 | Template validator | Passes |
 | MCP (`https://docs.ecartpay.com/mcp`) | Live — docs + `execute-request` |
@@ -40,7 +40,7 @@ None of this fails the local validator. Reviewers and GitHub still see it.
 - [ ] Sync `plugins/ecart-pay/README.md` with the root README (live action commands, `ECARTPAY_MODE`, ReadMe MCP).
 - [ ] Add `SECURITY.md`: sandbox by default, never commit keys, HMAC on webhooks, how to report issues.
 - [ ] GitHub about: topics (`cursor-plugin`, `claude-code`, `mcp`, `payments`), homepage `https://docs.ecartpay.com`.
-- [ ] Tag and GitHub Release `v1.3.0`.
+- [ ] Tag and GitHub Release `v1.3.2`.
 - [ ] Add `.github/workflows/` that runs `node scripts/validate-template.mjs` on push/PR.
 - [ ] Fix the sample email in [marketplace-submission.md](./marketplace-submission.md): plugin name is `ecart-pay`, not `ecartpay`.
 - [ ] Document that plugin Configure variables (`ECARTPAY_PUBLIC_KEY`, `ECARTPAY_PRIVATE_KEY`, `ECARTPAY_BASE_URL`) are **skill fallbacks**, not `${VAR}` substitutions in `mcp.json` — or wire them into MCP headers if that is the intended path.
@@ -57,7 +57,7 @@ Local install (`./scripts/install-local.sh`) does not prove the green “e” lo
 - [ ] Enable MCP server `ecartpay`.
 - [ ] Smoke prompts:
   - Connect a partner app with OAuth in sandbox.
-  - Create a sandbox customer/order via ReadMe MCP `execute-request`.
+  - Create a sandbox customer/order via `ecartpay-api` when Authenticate works (docs MCP `execute-request` as fallback).
   - Add a webhook receiver with HMAC verification.
 
 ---

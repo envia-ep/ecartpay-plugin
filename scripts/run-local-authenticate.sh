@@ -30,7 +30,7 @@ cat <<EOF
          "name": "Ecart Pay Cursor MCP (local)",
          "description": "Local Authenticate for Cursor",
          "redirect_url": "${callback}",
-         "scopes": ["read_orders", "write_orders"]
+         "scopes": ["read_orders","write_orders","read_orders_subscription","read_customers","write_customers","read_products","write_products","read_paylinks","write_paylinks","write_checkouts","read_subscriptions","write_subscriptions","read_single_subscription","read_subscriptions_template","write_subscriptions_template","read_billings","write_billings","read_chargebacks","write_chargebacks","read_transactions","read_whatsapp","write_whatsapp"]
        }'
 
    Save client_id and client_secret (secret is shown once).

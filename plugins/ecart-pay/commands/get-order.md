@@ -9,7 +9,7 @@ Look up an order after a pay-in, payment link, checkout, or WhatsApp send.
 
 ## Host and auth
 
-Prefer authenticated `ecartpay-api`. If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. On `ecartpay-api`, pass `x-ecartpay-mode`.
+Prefer authenticated `ecartpay-api` (`retrieve_order`). If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. On `ecartpay-api`, pass `x-ecartpay-mode`.
 
 ## Steps
 

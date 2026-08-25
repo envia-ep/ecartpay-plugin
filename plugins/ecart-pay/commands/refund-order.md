@@ -9,7 +9,7 @@ Reverse a demo or real payment on the selected API host.
 
 ## Host and auth
 
-Prefer authenticated `ecartpay-api`. If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
+Prefer authenticated `ecartpay-api` (`retrieve_order`, `create_refund`). If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
 
 ## Steps
 

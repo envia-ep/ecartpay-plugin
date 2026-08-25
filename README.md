@@ -12,7 +12,7 @@ One shared plugin body (`skills`, MCP, commands) with host-specific manifests �
 - **Live actions** — slash commands via `ecartpay-api` when authenticated, else MCP `execute-request` (`ECARTPAY_MODE` sandbox or production)
 - **Mexico** — MSI, CLABE/transfers, billing/facturación, integration planner (skills)
 - **Skills** — pay-ins, webhooks (HMAC), SDK / checkout / 3DS / wallets, WhatsApp
-- **Commands** — `/setup-auth`, `/connect-oauth`, `/create-order`, `/create-payment-link`, `/create-checkout`, `/whatsapp-status`, `/send-whatsapp-payment`, `/get-order`, `/refund-order`
+- **Commands** — `/setup-auth`, `/connect-oauth`, `/create-order`, `/create-subscription`, `/create-payment-link`, `/create-checkout`, `/whatsapp-status`, `/send-whatsapp-payment`, `/get-order`, `/refund-order`
 - **Cursor rules** — auth, sandbox vs production, MCP write safety
 - **MCP** — `ecartpay` (`https://docs.ecartpay.com/mcp`) for docs; `ecartpay-api` (`https://mcp.ecartpay.com/mcp`) for Authenticate and live API tools
 

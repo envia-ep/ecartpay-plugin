@@ -5,7 +5,7 @@ description: Create a live customer, token, and order via authenticated MCP or d
 
 # Create order (live)
 
-Run the canonical pay-in on the selected API host. Prefer authenticated MCP `ecartpay-api` tools (`customers.create`, `orders.create`, …). If that server is not authenticated, use docs MCP `ecartpay` `get-endpoint` + `execute-request`. If the user asks for MSI / installments, add official tokenize fields from docs — do not invent them.
+Run the canonical pay-in on the selected API host. Prefer authenticated MCP `ecartpay-api` tools (`create_customer`, `create_order`, …). If that server is not authenticated, use docs MCP `ecartpay` `get-endpoint` + `execute-request`. If the user asks for MSI / installments, add official tokenize fields from docs — do not invent them.
 
 ## Host and auth
 

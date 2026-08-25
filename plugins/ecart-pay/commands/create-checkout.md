@@ -9,7 +9,7 @@ Create a hosted checkout and print the URL the customer can open.
 
 ## Host and auth
 
-Prefer authenticated `ecartpay-api`. If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
+Prefer authenticated `ecartpay-api` (`create_checkout`). If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
 
 ## Steps
 

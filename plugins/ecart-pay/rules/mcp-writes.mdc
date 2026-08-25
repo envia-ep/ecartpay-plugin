@@ -11,10 +11,17 @@ alwaysApply: true
    - If `ECARTPAY_BASE_URL` is set, use it.
    - Else `ECARTPAY_MODE=production` → `https://ecartpay.com`
    - Else (default `sandbox`) → `https://sandbox.ecartpay.com`
-4. On `ecartpay-api`, tools use Basic merchant keys from the OAuth session (same as stdio `createApiClient`). Send `x-ecartpay-mode`. Sandbox on that server requires linked sandbox keys — never send live keys to sandbox. On docs MCP `ecartpay`, create the JWT on **that same host** (`POST /api/authorizations/token`). Do not mix sandbox keys with the production host (or the reverse).
+4. On `ecartpay-api`, tools mint a JWT with `POST /api/authorizations/token` using Basic `public_id`/`private_id` from the OAuth session, then send that JWT as `Authorization` on API calls (tokens last ~1 hour). Send `x-ecartpay-mode`. Sandbox on that server requires linked sandbox keys — never send live keys to sandbox. On docs MCP `ecartpay`, create the JWT on **that same host** (`POST /api/authorizations/token`). Do not mix sandbox keys with the production host (or the reverse).
 5. Dashboard login and OAuth app setup stay on production (`https://ecartpay.com`). API token + writes follow the selected mode host.
 6. Before any MCP write to a non-sandbox Ecart Pay host, get explicit user confirmation.
 7. Never put `client_secret`, `private_id`, or JWTs in committed code or casual logs.
 8. Discover request shapes with MCP `ecartpay` `get-endpoint` / docs — do not invent fields. Authenticated live calls go through `ecartpay-api` scanned tools when available.
-9. Live slash commands (`/setup-auth`, `/connect-oauth`, `/create-order`, `/create-payment-link`, `/create-checkout`, `/whatsapp-status`, `/send-whatsapp-payment`, `/get-order`, `/refund-order`) must use MCP `ecartpay-api` when Authenticate succeeded; otherwise docs MCP `ecartpay` `execute-request`. Skills cover docs and scaffolding.
+9. Live slash commands (`/setup-auth`, `/connect-oauth`, `/create-order`, `/create-subscription`, `/create-payment-link`, `/create-checkout`, `/whatsapp-status`, `/send-whatsapp-payment`, `/get-order`, `/refund-order`) must use MCP `ecartpay-api` when Authenticate succeeded; otherwise docs MCP `ecartpay` `execute-request`. Skills cover docs and scaffolding. Public tool names are Stripe-style (`create_order`, `create_subscription`).
 10. `/connect-oauth` is Ecart Pay merchant Connect (Authorization Code → `public_id`/`private_id`). It is not Cursor MCP OAuth / the Authenticate button. Authenticate is `ecartpay-api` at `https://mcp.ecartpay.com/mcp`.
+11. The first-party Authenticate OAuth app must request the allowlist scopes (orders, customers, products, pay links, checkout, subscriptions, subscription templates, invoices, chargebacks, transactions, balance, WhatsApp). Partner Connect apps request only what they need. If `ecartpay_session` shows only `read_orders,write_orders`, update that OAuth app’s `scopes` and have the merchant Authenticate again (new consent). Docs: https://docs.ecartpay.com/docs/oauth-ecart-pay
+
+## Repo boundary
+
+12. This plugin owns agent behavior: rules, skills (docs/scaffolding), slash commands (live jobs), marketplace packaging, and MCP **URLs only**.
+13. The payment repo (`ecart-payment`) owns routes, Joi schemas, the MCP scanner, `scan.include`, public tool names, overrides, and OAuth Authenticate scopes. Do not duplicate Joi or invent endpoints here.
+14. Mention a public tool name in a command or skill only when that agent-facing job needs it. Schema and allowlist changes start in `ecart-payment`, then `npm run scan`.

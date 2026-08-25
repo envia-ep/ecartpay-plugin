@@ -46,6 +46,8 @@ curl -X POST "https://sandbox.ecartpay.com/api/oauth/applications" \
 
 Response includes `client_id` and `client_secret` (secret shown once — store server-side only). `read_credentials` is always included.
 
+Partner Connect apps should request **only** the scopes that product needs. The Cursor **Authenticate** first-party app is different: it must request the MCP allowlist (orders, customers, catalog, pay links, checkout, subscriptions, invoices, chargebacks, WhatsApp). See `authenticate-scopes.ts` in the MCP package. After adding scopes, merchants see a new consent screen. Docs: https://docs.ecartpay.com/docs/oauth-ecart-pay
+
 2. **Redirect the merchant** to:
 
 ```text

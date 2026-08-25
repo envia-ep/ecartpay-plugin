@@ -1,11 +1,17 @@
 ---
 name: integrate-payments
-description: Build or debug Ecart Pay server-side pay-in flows — auth, customers, cards, tokenization, and orders. Use when integrating payments, creating orders, refunds, or payment links via the API.
+description: >-
+  Build or debug Ecart Pay server-side pay-in flows — auth, customers, cards,
+  tokenization, and orders. Use when integrating payments into another system
+  (writing code). For creating an order now in chat, use /create-order or
+  create_order on ecartpay-api.
 ---
 
 # Integrate Ecart Pay payments
 
 Use official docs only. Index: https://docs.ecartpay.com/llms.txt · MCP: `ecartpay` (`https://docs.ecartpay.com/mcp`).
+
+This skill is for **writing integration code**. Live chat actions (create/list/refund an order now) use `ecartpay-api` tools (`create_customer`, `create_order`, `create_refund`) or `/create-order` after Authenticate.
 
 ## Auth (required first)
 

@@ -9,7 +9,7 @@ Create a pay-link template and print the URL the merchant can share.
 
 ## Host and auth
 
-Prefer authenticated `ecartpay-api` (`templates.create`). If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
+Prefer authenticated `ecartpay-api` (`create_payment_link`). If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`.
 
 ## Steps
 

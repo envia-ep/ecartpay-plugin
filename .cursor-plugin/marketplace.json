@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Official Ecart Pay plugins for Cursor \u2014 payments, checkouts, webhooks, SDK, and MCP",
-    "version": "1.3.0"
+    "version": "1.3.2"
   },
   "plugins": [
     {

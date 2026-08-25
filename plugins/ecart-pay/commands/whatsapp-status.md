@@ -9,7 +9,7 @@ Gate for `/send-whatsapp-payment`. Uses `GET /api/whatsapp/status`.
 
 ## Host and auth
 
-Prefer authenticated `ecartpay-api`. If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. On `ecartpay-api`, pass `x-ecartpay-mode`.
+Prefer authenticated `ecartpay-api` (`whatsapp_status`). If not authenticated, docs MCP `ecartpay` `get-endpoint` + `execute-request`. On `ecartpay-api`, pass `x-ecartpay-mode`.
 
 ## Steps
 
