@@ -5,7 +5,7 @@ description: Build or debug Ecart Pay server-side pay-in flows — auth, custome
 
 # Integrate Ecart Pay payments
 
-Use official docs only. Index: https://docs.ecartpay.com/llms.txt · MCP: `ecartpay` (`https://ecartpay.readme.io/mcp`).
+Use official docs only. Index: https://docs.ecartpay.com/llms.txt · MCP: `ecartpay` (`https://docs.ecartpay.com/mcp`).
 
 ## Auth (required first)
 

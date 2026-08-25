@@ -1,8 +1,8 @@
 {
   "name": "ecart-pay",
   "displayName": "Ecart Pay",
-  "version": "1.1.0",
-  "description": "Cursor plugin for Ecart Pay integrations — OAuth connect, sandbox live MCP, auth, orders, checkouts, webhooks, SDK, and Mexico pay-ins.",
+  "version": "1.3.0",
+  "description": "Cursor plugin for Ecart Pay — live orders, payment links, checkout, and WhatsApp charges via official docs MCP.",
   "author": {
     "name": "Ecart Pay",
     "email": "developers@ecartpay.com"
@@ -35,21 +35,42 @@
   "variables": {
     "type": "object",
     "properties": {
+      "ECARTPAY_MODE": {
+        "type": "string",
+        "title": "API mode",
+        "description": "API host for live MCP actions. Dashboard and OAuth stay on production. sandbox = sandbox.ecartpay.com + sandbox keys; production = ecartpay.com + live keys. Never mix.",
+        "enum": ["sandbox", "production"],
+        "default": "sandbox"
+      },
       "ECARTPAY_PUBLIC_KEY": {
         "type": "string",
-        "title": "Sandbox public key",
-        "description": "Fallback sandbox public API key when OAuth merchant keys are not available. Prefer OAuth connect for partner integrations."
+        "title": "Public API key",
+        "description": "Fallback public API key when OAuth merchant keys are not available. Must match ECARTPAY_MODE. Prefer OAuth connect for partner integrations."
       },
       "ECARTPAY_PRIVATE_KEY": {
         "type": "string",
-        "title": "Sandbox private key",
-        "description": "Fallback sandbox private API key. Never commit. Prefer OAuth connect."
+        "title": "Private API key",
+        "description": "Fallback private API key. Never commit. Must match ECARTPAY_MODE. Prefer OAuth connect."
       },
       "ECARTPAY_BASE_URL": {
         "type": "string",
-        "title": "API base URL",
-        "description": "API host for MCP execute-request. Default sandbox.",
-        "default": "https://sandbox.ecartpay.com"
+        "title": "API base URL override",
+        "description": "Optional explicit API host. Overrides ECARTPAY_MODE. Default is derived from mode (sandbox.ecartpay.com or ecartpay.com)."
+      },
+      "ECARTPAY_CLIENT_ID": {
+        "type": "string",
+        "title": "OAuth client id",
+        "description": "Partner OAuth application client_id for /connect-oauth. From POST /api/oauth/applications."
+      },
+      "ECARTPAY_CLIENT_SECRET": {
+        "type": "string",
+        "title": "OAuth client secret",
+        "description": "Partner OAuth client_secret. Never commit. Used only on POST /api/oauth/token."
+      },
+      "ECARTPAY_REDIRECT_URI": {
+        "type": "string",
+        "title": "OAuth redirect URI",
+        "description": "Must match an allowed redirect_url on the OAuth application. User pastes the callback code into chat."
       }
     }
   },

@@ -15,7 +15,7 @@ Docs index: https://docs.ecartpay.com/llms.txt · Backend flow: https://docs.eca
 
 1. Merchant `public_id` / `private_id` from a completed OAuth exchange (`oauth-connect`) — prefer this.
 2. Plugin Configure variables: `ECARTPAY_PUBLIC_KEY`, `ECARTPAY_PRIVATE_KEY`, optional `ECARTPAY_BASE_URL` (default `https://sandbox.ecartpay.com`).
-3. If neither is available: run `/setup-auth` or `/connect-oauth` first — do not invent keys.
+3. If neither is available: run `/setup-auth` or skill `oauth-connect` first — do not invent keys.
 
 Never use production hosts or live keys unless the user explicitly confirms.
 

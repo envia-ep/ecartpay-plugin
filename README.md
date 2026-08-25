@@ -7,13 +7,14 @@ One shared plugin body (`skills`, MCP, commands) with host-specific manifests �
 ## Features
 
 - **Docs-first** — [`llms.txt`](https://docs.ecartpay.com/llms.txt) + ReadMe MCP
-- **OAuth connect** — platform Authorization Code (`/connect-oauth`, skill `oauth-connect`)
-- **Live sandbox** — skill `sandbox-live` via MCP `execute-request` (prefer OAuth keys; Configure variables as fallback)
-- **Mexico** — MSI, CLABE/transfers, billing/facturación, integration planner
-- **Skills** — pay-ins, webhooks (HMAC), SDK / checkout / 3DS / wallets
-- **Commands** — `/setup-auth`, `/create-order`, `/connect-oauth`
+- **Authenticate** — Cursor button on `ecartpay-api` (`https://mcp.ecartpay.com/mcp`); merchant login on `https://ecartpay.com`
+- **OAuth connect** — skill `oauth-connect` for partner apps that onboard merchants
+- **Live actions** — slash commands via `ecartpay-api` when authenticated, else MCP `execute-request` (`ECARTPAY_MODE` sandbox or production)
+- **Mexico** — MSI, CLABE/transfers, billing/facturación, integration planner (skills)
+- **Skills** — pay-ins, webhooks (HMAC), SDK / checkout / 3DS / wallets, WhatsApp
+- **Commands** — `/setup-auth`, `/connect-oauth`, `/create-order`, `/create-payment-link`, `/create-checkout`, `/whatsapp-status`, `/send-whatsapp-payment`, `/get-order`, `/refund-order`
 - **Cursor rules** — auth, sandbox vs production, MCP write safety
-- **MCP** — `ecartpay` docs (`ecartpay.readme.io/mcp`) + `ecartpay-api` live host (`mcp.ecartpay.com/mcp`, from `ecart-payment/mcp`)
+- **MCP** — `ecartpay` (`https://docs.ecartpay.com/mcp`) for docs; `ecartpay-api` (`https://mcp.ecartpay.com/mcp`) for Authenticate and live API tools
 
 ## Install
 
@@ -21,7 +22,7 @@ One shared plugin body (`skills`, MCP, commands) with host-specific manifests �
 
 1. Install from the Cursor Marketplace when published, **or** import this repo as a **Team Marketplace** (Dashboard → Plugins → Import from Repo).
 2. Enable the `ecart-pay` plugin and MCP servers.
-3. Optional Configure (fallback only): `ECARTPAY_PUBLIC_KEY`, `ECARTPAY_PRIVATE_KEY`, `ECARTPAY_BASE_URL` — prefer OAuth for partner apps.
+3. Enable MCP: Authenticate on `ecartpay-api`. Optional Configure: `ECARTPAY_MODE` (`sandbox` default / `production`), API keys as fallback, and for partner Connect `ECARTPAY_CLIENT_ID` / `ECARTPAY_CLIENT_SECRET` / `ECARTPAY_REDIRECT_URI`.
 4. Validate from a clone:
 
 ```bash
@@ -85,8 +86,8 @@ plugins/ecart-pay/
 
 ## Quick agent prompts
 
-- “Connect a partner app with Ecart Pay OAuth in sandbox.”
-- “Using sandbox keys / OAuth, create a real sandbox customer and order via MCP.”
+- “Send a WhatsApp payment request to this phone via Ecart Pay.”
+- “Create a payment link for 500 MXN and give me the URL.”
 - “Add an Ecart Pay webhook receiver with HMAC verification.”
 - “Which integration should I use — API order, checkout, or payment link?”
 - “Implement MSI 3 months / CLABE pay-in for Mexico.”

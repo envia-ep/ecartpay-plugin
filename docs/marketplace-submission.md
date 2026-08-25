@@ -12,7 +12,7 @@ Local install (`~/.cursor/plugins/local/ecart-pay`) only works on your machine. 
 - [x] Square Ecart Pay “e” logo at `plugins/ecart-pay/assets/logo.png` (+ `logo.svg`)
 - [x] `node scripts/validate-template.mjs` passes
 - [x] OAuth + sandbox-live + Mexico skills (v1.1.0)
-- [ ] Deploy `ecart-payment` MCP process to `mcp.ecartpay.com` (see `ecart-payment/mcp/README.md`)
+- [x] Docs MCP `ecartpay` (`https://docs.ecartpay.com/mcp`) + Authenticate MCP `ecartpay-api` (`https://mcp.ecartpay.com/mcp`)
 - [ ] Submit for Public Cursor Marketplace review (below)
 - [ ] Import into Tendencys Team Marketplace and verify green “e” logo (below)
 
@@ -62,7 +62,7 @@ Hi — we'd like to list the Ecart Pay plugin on the Cursor Marketplace.
 Repo: https://github.com/envia-ep/ecartpay-plugin
 Marketplace name: ecartpay
 Plugin name: ecartpay
-Description: Integrate Ecart Pay payments, checkouts, webhooks, and SDK using official docs + MCP (https://ecartpay.readme.io/mcp).
+Description: Integrate Ecart Pay payments, checkouts, webhooks, and SDK using official docs + MCP (https://docs.ecartpay.com/mcp).
 
 Validation: node scripts/validate-template.mjs passes.
 ```

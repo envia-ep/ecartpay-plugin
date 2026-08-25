@@ -97,7 +97,7 @@ Request only what you need. Confirm current scope names via docs MCP before codi
 - HTTPS redirect URIs only; exact match required
 - Never commit `client_secret` or `private_id`
 - Prefer OAuth over pasting keys into Cursor plugin Configure
-- After keys exist, use the `sandbox-live` skill for MCP live sandbox calls
+- After keys exist, use `/setup-auth` then `/create-order` (or skill `sandbox-live`) for MCP live calls
 
 ## Deliverables
 
@@ -105,5 +105,5 @@ When implementing for the user:
 
 1. Sandbox OAuth app creation request
 2. Minimal backend callback (Node or their stack) that exchanges the code
-3. Next step: create JWT and a test order via `sandbox-live` / `/create-order`
+3. Next step: `/connect-oauth` in Cursor for a live exchange, or `/create-order` after keys exist
 4. Cite https://docs.ecartpay.com/docs/oauth-ecart-pay

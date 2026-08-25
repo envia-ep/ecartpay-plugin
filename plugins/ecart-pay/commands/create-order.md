@@ -1,33 +1,25 @@
 ---
 name: create-order
-description: Scaffold or run a minimal authenticated Ecart Pay sandbox create-order flow
+description: Create a live customer, token, and order via authenticated MCP or docs execute-request
 ---
 
-# Create a sandbox order
+# Create order (live)
 
-Build a minimal pay-in against sandbox using official docs only. Prefer live MCP when credentials exist (`sandbox-live`).
+Run the canonical pay-in on the selected API host. Prefer authenticated MCP `ecartpay-api` tools (`customers.create`, `orders.create`, …). If that server is not authenticated, use docs MCP `ecartpay` `get-endpoint` + `execute-request`. If the user asks for MSI / installments, add official tokenize fields from docs — do not invent them.
 
-## Prerequisites
+## Host and auth
 
-- Sandbox JWT from `/setup-auth` or OAuth merchant keys (valid ~1 hour)
-- Docs: https://docs.ecartpay.com/docs/backend-integration · https://docs.ecartpay.com/llms.txt
-- Optional: plugin variables `ECARTPAY_PUBLIC_KEY` / `ECARTPAY_PRIVATE_KEY` / `ECARTPAY_BASE_URL`
+Authenticate login stays on production. Resolve API host from `ECARTPAY_BASE_URL` or `ECARTPAY_MODE` (default sandbox). Confirm production writes. On `ecartpay-api`, pass `x-ecartpay-mode`. JWT from `/setup-auth` only when using the docs MCP.
 
-## Flow
+## Sequence
 
-1. If MCP + keys are available, follow skill `sandbox-live` (`execute-request` sequence).
-2. Otherwise scaffold the same HTTP flow for the user's stack:
+Confirm shapes with `get-endpoint` before each call:
 
-   - `POST /api/customers`
-   - `POST /api/customers/{customer_id}/cards` (sandbox test card from https://docs.ecartpay.com/docs/test-cards-1)
-   - `POST /api/tokens` with card id
-   - `POST /api/orders` with `customer_id`, `currency`, `items`, `token`, optional `notify_url`
-
-Base URL: `https://sandbox.ecartpay.com` (or sandbox `ECARTPAY_BASE_URL`).
+1. `POST /api/customers`
+2. `POST /api/customers/{customer_id}/cards` — sandbox test card from https://docs.ecartpay.com/docs/test-cards-1 when mode is sandbox
+3. `POST /api/tokens` — card `id` (+ `cvc` when required)
+4. `POST /api/orders` — `customer_id`, `currency`, `items`, `token`, optional `notify_url`
 
 ## Output
 
-- Exact request bodies for the user's language/stack, or MCP call results
-- No invented fields — verify against the API reference / MCP before finalizing
-- Note webhook/notify_url follow-up and token expiry
-- Refuse to default to production hosts or live keys
+Order id, status, and amount. No secrets, PAN, or full JWT. Suggest `/get-order` or `/refund-order` next.
