@@ -2,7 +2,7 @@
   "name": "ecartpay",
   "owner": {
     "name": "Ecart Pay",
-    "email": "developers@ecartpay.com"
+    "email": "support@ecartpay.com"
   },
   "metadata": {
     "description": "Official Ecart Pay plugins for Claude Code \u2014 payments, checkouts, webhooks, SDK, and MCP",
