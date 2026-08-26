@@ -1,10 +1,10 @@
 ---
 name: sandbox-live
 description: >-
-  Create a live sandbox payment in chat via the ecartpay MCP execute-request tool —
-  Basic auth to JWT, then customer, card, tokenize, and order using test cards. Use when
-  the user wants a real sandbox order without inventing API fields, or after OAuth
-  connect returns merchant keys.
+  Create a live sandbox payment in chat — Authenticate on ecartpay-api when
+  possible, else docs MCP execute-request (Basic → JWT), then customer, card,
+  tokenize, and order using test cards. Use when the user wants a real sandbox
+  order without inventing API fields. This is a live action, not a code scaffold.
 ---
 
 # Live sandbox via MCP
@@ -15,13 +15,13 @@ Docs index: https://docs.ecartpay.com/llms.txt · Backend flow: https://docs.eca
 
 1. Merchant `public_id` / `private_id` from a completed OAuth exchange (`oauth-connect`) — prefer this.
 2. Plugin Configure variables: `ECARTPAY_PUBLIC_KEY`, `ECARTPAY_PRIVATE_KEY`, optional `ECARTPAY_BASE_URL` (default `https://sandbox.ecartpay.com`).
-3. If neither is available: run `/setup-auth` or `/connect-oauth` first — do not invent keys.
+3. If neither is available: run `/setup-auth` or skill `oauth-connect` first — do not invent keys.
 
 Never use production hosts or live keys unless the user explicitly confirms.
 
 ## MCP write path
 
-Use the `ecartpay` MCP tools. Discover exact shapes with `search-endpoints` / `get-endpoint` before each call. Then `execute-request` with HAR payloads.
+Prefer authenticated `ecartpay-api` (`create_customer`, `create_order`). If that server is not authenticated, use docs MCP `ecartpay`: `get-endpoint` then `execute-request`. Discover exact shapes before each call.
 
 Base URL must be `https://sandbox.ecartpay.com` (or `ECARTPAY_BASE_URL` if it is clearly sandbox).
 

@@ -5,18 +5,22 @@ alwaysApply: true
 
 # Sandbox vs production
 
-| | Sandbox | Production |
+Plugin Configure `ECARTPAY_MODE` selects the **API** host. Dashboard and OAuth stay on production.
+
+| | Sandbox (default) | Production |
 |---|---|---|
-| Base URL | `https://sandbox.ecartpay.com` | `https://ecartpay.com` |
+| `ECARTPAY_MODE` | `sandbox` | `production` |
+| API base URL | `https://sandbox.ecartpay.com` | `https://ecartpay.com` |
 | Keys | Sandbox API keys (dashboard Sandbox toggle on) | Production API keys |
 | Cards / transfers | Test data from docs only | Real customer payment methods |
+| Dashboard / OAuth | `https://ecartpay.com` | `https://ecartpay.com` |
 
 Rules:
 
-1. Default all new integration work to **sandbox**.
+1. Default all live slash-command actions and new integration work to **sandbox**.
 2. Never mix sandbox keys with production hosts (or the reverse).
 3. Use official test cards/transfers from https://docs.ecartpay.com/docs/test-cards-1 and related sandbox guides.
-4. Warn the user explicitly before generating or running code against production.
+4. Warn the user explicitly before generating or running code, or MCP writes, against production.
 5. Treat production keys and live webhook secrets as high-risk credentials.
-6. MCP `execute-request` and plugin Configure keys default to sandbox; confirm before any write to `https://ecartpay.com`.
-7. Prefer OAuth merchant credentials over pasting production keys into the IDE.
+6. If `ECARTPAY_BASE_URL` is set, it overrides mode. Confirm it matches the keys.
+7. Prefer Cursor **Authenticate** on `ecartpay-api` (production login) or OAuth Connect for partner apps over pasting production keys into the IDE.

@@ -46,6 +46,8 @@ curl -X POST "https://sandbox.ecartpay.com/api/oauth/applications" \
 
 Response includes `client_id` and `client_secret` (secret shown once — store server-side only). `read_credentials` is always included.
 
+Partner Connect apps should request **only** the scopes that product needs. The Cursor **Authenticate** first-party app is different: it must request the MCP allowlist (orders, customers, catalog, pay links, checkout, subscriptions, invoices, chargebacks, WhatsApp). See `authenticate-scopes.ts` in the MCP package. After adding scopes, merchants see a new consent screen. Docs: https://docs.ecartpay.com/docs/oauth-ecart-pay
+
 2. **Redirect the merchant** to:
 
 ```text
@@ -97,7 +99,7 @@ Request only what you need. Confirm current scope names via docs MCP before codi
 - HTTPS redirect URIs only; exact match required
 - Never commit `client_secret` or `private_id`
 - Prefer OAuth over pasting keys into Cursor plugin Configure
-- After keys exist, use the `sandbox-live` skill for MCP live sandbox calls
+- After keys exist, use `/setup-auth` then `/create-order` (or skill `sandbox-live`) for MCP live calls
 
 ## Deliverables
 
@@ -105,5 +107,5 @@ When implementing for the user:
 
 1. Sandbox OAuth app creation request
 2. Minimal backend callback (Node or their stack) that exchanges the code
-3. Next step: create JWT and a test order via `sandbox-live` / `/create-order`
+3. Next step: `/connect-oauth` in Cursor for a live exchange, or `/create-order` after keys exist
 4. Cite https://docs.ecartpay.com/docs/oauth-ecart-pay
