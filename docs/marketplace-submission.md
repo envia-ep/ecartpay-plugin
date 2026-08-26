@@ -9,7 +9,7 @@ Local install (`~/.cursor/plugins/local/ecart-pay`) only works on your machine. 
 - [x] `.cursor-plugin/marketplace.json` valid
 - [x] `plugins/ecart-pay/.cursor-plugin/plugin.json` valid (kebab-case `ecart-pay`)
 - [x] Rules / skills / commands have required frontmatter
-- [x] Square Ecart Pay “e” logo at `plugins/ecart-pay/assets/logo.png` (+ `logo.svg`)
+- [x] Square Ecart Pay logo at `plugins/ecart-pay/assets/logo.png`
 - [x] `node scripts/validate-template.mjs` passes
 - [x] OAuth + sandbox-live + Mexico skills (v1.1.0)
 - [x] Docs MCP `ecartpay` (`https://docs.ecartpay.com/mcp`) + Authenticate MCP `ecartpay-api` (`https://mcp.ecartpay.com/mcp`)
@@ -40,7 +40,7 @@ Requirements:
 | Team Marketplace import | Yes | Yes (green “e”) |
 | Public Marketplace | Yes | Yes (green “e”) |
 
-Relative `"logo": "assets/logo.svg"` resolves via `raw.githubusercontent.com` using the install’s repo + commit. Pure Local disk installs have no GitHub commit context, so Cursor falls back to the blue book even when `assets/logo.svg` exists on disk. Use Team Marketplace (or Public Marketplace) to QA the green “e”.
+Relative `"logo": "assets/logo.png"` resolves via `raw.githubusercontent.com` using the install’s repo + commit. Pure Local disk installs have no GitHub commit context, so Cursor falls back to the blue book even when `assets/logo.png` exists on disk. Use Team Marketplace (or Public Marketplace) to QA the logo.
 
 ## Public Cursor Marketplace (anyone)
 
