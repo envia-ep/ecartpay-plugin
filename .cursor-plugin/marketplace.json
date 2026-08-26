@@ -13,7 +13,7 @@
       "name": "ecart-pay",
       "source": "./plugins/ecart-pay",
       "description": "Integrate Ecart Pay with Cursor agents using official docs and MCP",
-      "logo": "assets/logo.svg"
+      "logo": "assets/logo.png"
     }
   ]
 }
