@@ -4,7 +4,7 @@
   "description": "ChatGPT Work / Codex plugin for Ecart Pay integrations \u2014 auth, orders, subscriptions, checkouts, payment links, webhooks, SDK, and official MCP.",
   "author": {
     "name": "Ecart Pay",
-    "email": "developers@ecartpay.com"
+    "email": "support@ecartpay.com"
   },
   "homepage": "https://docs.ecartpay.com",
   "repository": "https://github.com/envia-ep/ecartpay-plugin",

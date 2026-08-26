@@ -42,4 +42,4 @@ Values in **Plugins → Configure** are fallbacks for skills and slash commands.
 
 - [Privacy policy](https://ecartpay.com/p/legal/privacy-policy)
 - [Terms and conditions](https://ecartpay.com/p/legal/terms-and-conditions)
-- Support: [developers@ecartpay.com](mailto:developers@ecartpay.com)
+- Support: [support@ecartpay.com](mailto:support@ecartpay.com)

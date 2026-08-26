@@ -104,4 +104,4 @@ plugins/ecart-pay/
 - [Terms and conditions](https://ecartpay.com/p/legal/terms-and-conditions)
 - [Security](SECURITY.md)
 
-Support: [developers@ecartpay.com](mailto:developers@ecartpay.com)
+Support: [support@ecartpay.com](mailto:support@ecartpay.com)
