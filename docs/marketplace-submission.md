@@ -49,7 +49,7 @@ Relative `"logo": "assets/logo.svg"` resolves via `raw.githubusercontent.com` us
    - Repo: `https://github.com/envia-ep/ecartpay-plugin`
    - Marketplace name: `ecartpay`
    - Plugin name: `ecart-pay`
-3. Cursor manually reviews (repo is public MIT — required).
+3. Cursor manually reviews (repo must be public and open source).
 4. After listing, users install via **Browse Marketplace** → search “Ecart Pay”.
 
 Suggested email:
@@ -61,7 +61,7 @@ Hi — we'd like to list the Ecart Pay plugin on the Cursor Marketplace.
 
 Repo: https://github.com/envia-ep/ecartpay-plugin
 Marketplace name: ecartpay
-Plugin name: ecartpay
+Plugin name: ecart-pay
 Description: Integrate Ecart Pay payments, checkouts, webhooks, and SDK using official docs + MCP (https://docs.ecartpay.com/mcp).
 
 Validation: node scripts/validate-template.mjs passes.

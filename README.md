@@ -22,7 +22,7 @@ One shared plugin body (`skills`, MCP, commands) with host-specific manifests �
 
 1. Install from the Cursor Marketplace when published, **or** import this repo as a **Team Marketplace** (Dashboard → Plugins → Import from Repo).
 2. Enable the `ecart-pay` plugin and MCP servers.
-3. Enable MCP: Authenticate on `ecartpay-api`. Optional Configure: `ECARTPAY_MODE` (`sandbox` default / `production`), API keys as fallback, and for partner Connect `ECARTPAY_CLIENT_ID` / `ECARTPAY_CLIENT_SECRET` / `ECARTPAY_REDIRECT_URI`.
+3. Enable MCP: Authenticate on `ecartpay-api`. Optional **Plugins → Configure** (skill/command fallbacks, not `${VAR}` in `mcp.json`): `ECARTPAY_MODE` (`sandbox` default / `production`), `ECARTPAY_PUBLIC_KEY` / `ECARTPAY_PRIVATE_KEY` when OAuth keys are not available, optional `ECARTPAY_BASE_URL`, and for partner Connect `ECARTPAY_CLIENT_ID` / `ECARTPAY_CLIENT_SECRET` / `ECARTPAY_REDIRECT_URI`.
 4. Validate from a clone:
 
 ```bash
@@ -92,7 +92,7 @@ plugins/ecart-pay/
 - “Which integration should I use — API order, checkout, or payment link?”
 - “Implement MSI 3 months / CLABE pay-in for Mexico.”
 
-## Docs
+## Docs and legal
 
 - [Developer documentation](https://docs.ecartpay.com)
 - [OAuth](https://docs.ecartpay.com/docs/oauth-ecart-pay)
@@ -100,7 +100,8 @@ plugins/ecart-pay/
 - [Backend integration](https://docs.ecartpay.com/docs/backend-integration)
 - [Webhooks](https://docs.ecartpay.com/docs/webhooks-in-ecart-pay)
 - [MCP setup](https://docs.ecartpay.com/docs/mcp)
+- [Privacy policy](https://ecartpay.com/p/legal/privacy-policy)
+- [Terms and conditions](https://ecartpay.com/p/legal/terms-and-conditions)
+- [Security](SECURITY.md)
 
-## License
-
-MIT — see [plugins/ecart-pay/LICENSE](plugins/ecart-pay/LICENSE).
+Support: [developers@ecartpay.com](mailto:developers@ecartpay.com)

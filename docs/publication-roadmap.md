@@ -36,14 +36,14 @@ Related: [marketplace-submission.md](./marketplace-submission.md) (how to submit
 
 None of this fails the local validator. Reviewers and GitHub still see it.
 
-- [ ] Copy `plugins/ecart-pay/LICENSE` to the **repo root** so GitHub detects MIT (today `license` is null).
-- [ ] Sync `plugins/ecart-pay/README.md` with the root README (live action commands, `ECARTPAY_MODE`, ReadMe MCP).
-- [ ] Add `SECURITY.md`: sandbox by default, never commit keys, HMAC on webhooks, how to report issues.
+- [ ] LICENSE file skipped: Cursor lists `license` as optional; Help only requires public open source, not a `LICENSE` file.
+- [x] Sync `plugins/ecart-pay/README.md` with the root README (live action commands, `ECARTPAY_MODE`, ReadMe MCP).
+- [x] Add `SECURITY.md`: sandbox by default, never commit keys, HMAC on webhooks, how to report issues.
 - [ ] GitHub about: topics (`cursor-plugin`, `claude-code`, `mcp`, `payments`), homepage `https://docs.ecartpay.com`.
 - [ ] Tag and GitHub Release `v1.3.2`.
-- [ ] Add `.github/workflows/` that runs `node scripts/validate-template.mjs` on push/PR.
-- [ ] Fix the sample email in [marketplace-submission.md](./marketplace-submission.md): plugin name is `ecart-pay`, not `ecartpay`.
-- [ ] Document that plugin Configure variables (`ECARTPAY_PUBLIC_KEY`, `ECARTPAY_PRIVATE_KEY`, `ECARTPAY_BASE_URL`) are **skill fallbacks**, not `${VAR}` substitutions in `mcp.json` — or wire them into MCP headers if that is the intended path.
+- [x] Add `.github/workflows/` that runs `node scripts/validate-template.mjs` on push/PR.
+- [x] Fix the sample email in [marketplace-submission.md](./marketplace-submission.md): plugin name is `ecart-pay`, not `ecartpay`.
+- [x] Document that plugin Configure variables (`ECARTPAY_PUBLIC_KEY`, `ECARTPAY_PRIVATE_KEY`, `ECARTPAY_BASE_URL`) are **skill fallbacks**, not `${VAR}` substitutions in `mcp.json`.
 
 ---
 
@@ -109,7 +109,7 @@ codex plugin marketplace add envia-ep/ecartpay-plugin
 ## Suggested order
 
 ```text
-Phase 1  LICENSE / README / SECURITY / CI / tag
+Phase 1  README / SECURITY / CI / tag
     → Phase 2  Team Marketplace + logo QA
         → Phase 3  Cursor submit, then Claude directory, then Codex smoke
 ```

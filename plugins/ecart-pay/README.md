@@ -20,8 +20,26 @@ Helps Cursor, Claude Code, and ChatGPT Work / Codex agents build payment flows u
 
 See the [repository README](https://github.com/envia-ep/ecartpay-plugin) for Cursor Marketplace, Claude Code, and ChatGPT / Codex install steps.
 
+## Configure (Cursor)
+
+Values in **Plugins → Configure** are fallbacks for skills and slash commands. They are **not** substituted into `mcp.json` (no `${VAR}` there). Authenticate on `ecartpay-api` is the preferred live path.
+
+| Variable | Role |
+|---|---|
+| `ECARTPAY_MODE` | API host: `sandbox` (default) or `production`. Dashboard / OAuth stay on production. |
+| `ECARTPAY_PUBLIC_KEY` / `ECARTPAY_PRIVATE_KEY` | Fallback API keys when OAuth merchant keys are not available. Must match mode. |
+| `ECARTPAY_BASE_URL` | Optional API host override. |
+| `ECARTPAY_CLIENT_ID` / `ECARTPAY_CLIENT_SECRET` / `ECARTPAY_REDIRECT_URI` | Partner Connect (`/connect-oauth`) only. |
+
 ## Security
 
 - Default API host from `ECARTPAY_MODE` (`sandbox` → `https://sandbox.ecartpay.com`)
 - Never commit API keys, JWTs, or webhook secrets
 - Verify webhook HMAC signatures before processing events
+- Full policy: [SECURITY.md](../../SECURITY.md)
+
+## Legal
+
+- [Privacy policy](https://ecartpay.com/p/legal/privacy-policy)
+- [Terms and conditions](https://ecartpay.com/p/legal/terms-and-conditions)
+- Support: [developers@ecartpay.com](mailto:developers@ecartpay.com)
