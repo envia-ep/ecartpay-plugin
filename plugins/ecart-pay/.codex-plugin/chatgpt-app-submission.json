@@ -1,0 +1,920 @@
+{
+  "$schema": "https://developers.openai.com/apps-sdk/schemas/chatgpt-app-submission.v1.json",
+  "schema_version": 1,
+  "app_info": {
+    "display_name": "Ecart Pay",
+    "subtitle": "Orders, links, and WhatsApp",
+    "description": "Ecart Pay lets merchants and developers look up orders, create payment links and checkouts, manage subscriptions and catalog, refund payments, and send WhatsApp payment requests using the official Ecart Pay API through ChatGPT.",
+    "category": "FINANCE"
+  },
+  "tools": {
+    "whatsapp_status": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_whatsapp_orders": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_whatsapp_order": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_transactions": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_balance": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_transaction": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_payment_links": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_payment_link": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_subscriptions": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_subscription": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_products": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_prices": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_price": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_product": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_order_products": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_product_categories": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_product_category": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_orders": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_order": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_customers": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_customer": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_coupons": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "get_account_info": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_checkout": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_chargebacks": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_chargeback": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_invoices": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list_subscription_templates": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "retrieve_subscription_template": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "debug_payment": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "investigate_transaction": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "ecartpay_session": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list-endpoints": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "get-endpoint": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "search-endpoints": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "list-specs": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves merchant account data from Ecart Pay and does not create or update records.",
+        "open_world_justification": "Reads the authenticated merchant workspace and does not send messages or publish public content.",
+        "destructive_justification": "Does not delete, refund, cancel, or send irreversible messages."
+      }
+    },
+    "confirm_whatsapp_order": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Confirms a WhatsApp commerce order in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_payment_link": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a payment link record in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_subscription": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a subscription in the merchant billing system.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_subscription": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates an existing subscription in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_product": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a product in the merchant catalog.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_price": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a price on a catalog product.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_price": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates an existing catalog price.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "archive_price": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Archives a catalog price so it is no longer offered.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "activate_price": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Reactivates an archived catalog price.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "set_default_price": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Sets the default price on a catalog product.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_product": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates product catalog metadata.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "add_order_items": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Adds line items to an existing order.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_product_category": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a product category in the catalog.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_product_category": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates a product category in the catalog.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "archive_product_category": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Archives a product category in the catalog.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "restore_product_category": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Restores an archived product category.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_order": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates an order in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_customer": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a customer record in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_coupon": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a coupon in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_checkout": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a checkout session in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_checkout": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates a checkout session in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_checkout_item": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates a line item on a checkout session.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_chargeback": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates chargeback case data in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_invoice": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates an invoice in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "update_invoice": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Updates an invoice in the merchant account.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "create_subscription_template": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a subscription template used for plan links.",
+        "open_world_justification": "Changes stay in the merchant's Ecart Pay account and do not post to public internet surfaces.",
+        "destructive_justification": "Does not delete resources, refund funds, or send irreversible customer messages."
+      }
+    },
+    "resend_whatsapp_payment_link": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": true,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Resends a WhatsApp payment link to the customer.",
+        "open_world_justification": "Delivers a message through WhatsApp, which is an external messaging network.",
+        "destructive_justification": "Sends a customer-facing message that cannot be unsent after delivery."
+      }
+    },
+    "send_whatsapp_payment": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": true,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Sends a WhatsApp payment request to a customer phone number.",
+        "open_world_justification": "Delivers a payment request through WhatsApp, which is an external messaging network.",
+        "destructive_justification": "Sends a customer-facing message that cannot be unsent after delivery."
+      }
+    },
+    "create_refund": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Creates a refund against a paid order in Ecart Pay.",
+        "open_world_justification": "Refunds the merchant's private payment record and does not publish public content.",
+        "destructive_justification": "Moves funds back to the original payment method and cannot be undone from this tool."
+      }
+    },
+    "cancel_subscription": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Cancels an existing subscription in the merchant account.",
+        "open_world_justification": "Affects the merchant's private billing records and does not post public content.",
+        "destructive_justification": "Stops future billing for the subscription after cancellation."
+      }
+    },
+    "delete_price": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Deletes a catalog price from a product.",
+        "open_world_justification": "Changes stay in the merchant catalog and are not published to public sites.",
+        "destructive_justification": "Permanently removes the selected price from the catalog."
+      }
+    },
+    "delete_product_category": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Deletes a product category from the catalog.",
+        "open_world_justification": "Changes stay in the merchant catalog and are not published to public sites.",
+        "destructive_justification": "Permanently removes the selected category."
+      }
+    },
+    "reject_whatsapp_order": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": false,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Rejects a WhatsApp commerce order in the merchant account.",
+        "open_world_justification": "Updates the merchant's private WhatsApp order and does not post public content.",
+        "destructive_justification": "Rejects the order so it cannot proceed as originally requested."
+      }
+    },
+    "execute-request": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": true,
+        "destructiveHint": true
+      },
+      "justifications": {
+        "read_only_justification": "Can call any documented Ecart Pay HTTP method, including creates and updates.",
+        "open_world_justification": "Can send authenticated requests to the Ecart Pay API host, including notify and message flows.",
+        "destructive_justification": "Can refund, cancel, delete, or otherwise perform irreversible API actions depending on the path."
+      }
+    }
+  },
+  "test_cases": [
+    {
+      "description": "List recent merchant orders.",
+      "user_prompt": "Show my latest Ecart Pay orders and their statuses.",
+      "file_attachment_urls": null,
+      "tools_triggered": "list_orders",
+      "expected_output": "Returns a list of orders with identifiers and status so the user can pick one to inspect.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Retrieve one order by id.",
+      "user_prompt": "Get the details for this Ecart Pay order id and tell me if it is paid.",
+      "file_attachment_urls": null,
+      "tools_triggered": "retrieve_order",
+      "expected_output": "Returns the matching order including status and totals without creating a new charge.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Create a sandbox payment link.",
+      "user_prompt": "Create an Ecart Pay payment link for 500 MXN with concept Test checkout.",
+      "file_attachment_urls": null,
+      "tools_triggered": "create_payment_link",
+      "expected_output": "Creates a payment link in the merchant account and returns the URL to share.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Check WhatsApp payment capability.",
+      "user_prompt": "Is WhatsApp payments enabled on my Ecart Pay account?",
+      "file_attachment_urls": null,
+      "tools_triggered": "whatsapp_status",
+      "expected_output": "Reports whether WhatsApp is connected and ready without sending a customer message.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Send a WhatsApp payment request.",
+      "user_prompt": "Send a WhatsApp payment request for 200 MXN to this customer phone using Ecart Pay.",
+      "file_attachment_urls": null,
+      "tools_triggered": "send_whatsapp_payment",
+      "expected_output": "Sends the payment request over WhatsApp and confirms delivery status without exposing secrets.",
+      "expected_output_url": null
+    }
+  ],
+  "negative_test_cases": [
+    {
+      "description": "Do not trigger for unrelated calendar requests.",
+      "user_prompt": "What meetings do I have tomorrow?",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is outside Ecart Pay payment workflows.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for general coding help.",
+      "user_prompt": "Write a Python script that sorts a list of names.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is not an Ecart Pay payment operation.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for unrelated travel booking.",
+      "user_prompt": "Book me a hotel in Cancun for next weekend.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because hotel booking is outside supported Ecart Pay workflows.",
+      "expected_output_url": null
+    }
+  ]
+}
